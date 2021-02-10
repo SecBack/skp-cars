@@ -22,3 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/orders', [App\Http\Controllers\OrderController::class, 'index'])->name('orders');
+
+Route::get('/orders/?{name}', function(){
+    return redirect('vue_app');
+})->where('name', '[A-Za-z]+');
